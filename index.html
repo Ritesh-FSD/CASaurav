@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>CA India – Chartered Accountants | Financial Excellence</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap" rel="stylesheet"/>
+  <style>
+    :root {
+      --ca-blue:    #1C6FA3;
+      --ca-blue-dk: #134d73;
+      --ca-blue-lt: #EBF4FB;
+      --ca-orange:  #F26522;
+      --ca-green:   #3DAA4B;
+      --ca-dark:    #0D1B2A;
+      --ca-mid:     #4A5568;
+      --ca-light:   #F7FAFC;
+      --ca-white:   #FFFFFF;
+      --radius:     12px;
+      --shadow-sm:  0 2px 8px rgba(28,111,163,.10);
+      --shadow-md:  0 8px 28px rgba(28,111,163,.15);
+      --shadow-lg:  0 20px 60px rgba(28,111,163,.18);
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      color: var(--ca-dark);
+      background: var(--ca-white);
+      scroll-behavior: smooth;
+    }
+
+    /* ─── NAVBAR ─── */
+    .navbar {
+      background: var(--ca-white);
+      border-bottom: 1px solid rgba(28,111,163,.10);
+      padding: 0.6rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+    }
+    .navbar-brand img { height: 48px; }
+    .nav-link {
+      font-size: .875rem;
+      font-weight: 500;
+      color: var(--ca-dark) !important;
+      padding: .5rem .9rem !important;
+      transition: color .2s;
+    }
+    .nav-link:hover, .nav-link.active { color: var(--ca-blue) !important; }
+    .btn-nav-cta {
+      background: var(--ca-blue);
+      color: #fff !important;
+      border-radius: 8px;
+      padding: .45rem 1.2rem !important;
+      font-weight: 600;
+      transition: background .2s, transform .15s;
+    }
+    .btn-nav-cta:hover { background: var(--ca-blue-dk); transform: translateY(-1px); }
+
+    /* ─── HERO ─── */
+    .hero {
+      background: linear-gradient(135deg, var(--ca-dark) 0%, var(--ca-blue-dk) 60%, var(--ca-blue) 100%);
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 55% 60% at 80% 50%, rgba(242,101,34,.13) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 15% 80%, rgba(61,170,75,.09) 0%, transparent 70%);
+    }
+    .hero-eyebrow {
+      font-size: .78rem;
+      letter-spacing: .18em;
+      text-transform: uppercase;
+      color: var(--ca-orange);
+      font-weight: 600;
+    }
+    .hero h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 5vw, 4rem);
+      font-weight: 800;
+      color: #fff;
+      line-height: 1.15;
+    }
+    .hero h1 span { color: var(--ca-orange); }
+    .hero-sub {
+      font-size: 1.05rem;
+      color: rgba(255,255,255,.72);
+      max-width: 540px;
+      line-height: 1.7;
+    }
+    .hero-stat {
+      border-left: 3px solid var(--ca-orange);
+      padding-left: 1rem;
+    }
+    .hero-stat .num {
+      font-size: 1.8rem;
+      font-weight: 800;
+      color: #fff;
+      line-height: 1;
+    }
+    .hero-stat .lbl { font-size: .75rem; color: rgba(255,255,255,.55); }
+    .hero-card {
+      background: rgba(255,255,255,.06);
+      border: 1px solid rgba(255,255,255,.13);
+      backdrop-filter: blur(12px);
+      border-radius: var(--radius);
+      padding: 2rem 1.6rem;
+    }
+    .hero-card h5 { color: #fff; font-weight: 600; margin-bottom: 1rem; }
+    .hero-card .form-control, .hero-card .form-select {
+      background: rgba(255,255,255,.10);
+      border: 1px solid rgba(255,255,255,.20);
+      color: #fff;
+      border-radius: 8px;
+      font-size: .875rem;
+    }
+    .hero-card .form-control::placeholder { color: rgba(255,255,255,.45); }
+    .hero-card .form-control:focus, .hero-card .form-select:focus {
+      background: rgba(255,255,255,.15);
+      border-color: var(--ca-orange);
+      box-shadow: 0 0 0 3px rgba(242,101,34,.25);
+      color: #fff;
+    }
+    .hero-card .form-select option { color: var(--ca-dark); background: #fff; }
+    .btn-orange {
+      background: var(--ca-orange);
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      font-weight: 600;
+      padding: .65rem 1.4rem;
+      transition: background .2s, transform .15s, box-shadow .15s;
+    }
+    .btn-orange:hover {
+      background: #d4551a;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(242,101,34,.35);
+    }
+
+    /* ─── TRUST BAR ─── */
+    .trust-bar {
+      background: var(--ca-blue);
+      padding: 1.1rem 0;
+    }
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      color: rgba(255,255,255,.85);
+      font-size: .82rem;
+      font-weight: 500;
+    }
+    .trust-item i { color: var(--ca-orange); font-size: 1rem; }
+
+    /* ─── SECTION COMMON ─── */
+    .section-eyebrow {
+      font-size: .75rem;
+      letter-spacing: .16em;
+      text-transform: uppercase;
+      color: var(--ca-orange);
+      font-weight: 600;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.7rem, 3vw, 2.4rem);
+      font-weight: 800;
+      color: var(--ca-dark);
+      line-height: 1.2;
+    }
+    .section-title span { color: var(--ca-blue); }
+
+    /* ─── SERVICES ─── */
+    .services-section { background: var(--ca-light); padding: 100px 0; }
+    .service-tab-btn {
+      background: none;
+      border: 2px solid rgba(28,111,163,.18);
+      border-radius: 10px;
+      padding: .65rem 1rem;
+      font-size: .82rem;
+      font-weight: 600;
+      color: var(--ca-mid);
+      cursor: pointer;
+      transition: all .2s;
+      text-align: left;
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      width: 100%;
+    }
+    .service-tab-btn i { font-size: 1rem; width: 20px; color: var(--ca-blue); }
+    .service-tab-btn.active, .service-tab-btn:hover {
+      border-color: var(--ca-blue);
+      background: var(--ca-blue);
+      color: #fff;
+    }
+    .service-tab-btn.active i, .service-tab-btn:hover i { color: #fff; }
+    .service-panel { display: none; }
+    .service-panel.active { display: block; }
+    .service-card {
+      background: var(--ca-white);
+      border-radius: var(--radius);
+      border: 1px solid rgba(28,111,163,.10);
+      padding: 1.4rem;
+      display: flex;
+      gap: 1rem;
+      align-items: flex-start;
+      transition: box-shadow .2s, transform .2s;
+      height: 100%;
+    }
+    .service-card:hover { box-shadow: var(--shadow-md); transform: translateY(-3px); }
+    .svc-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--ca-blue-lt);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .svc-icon i { color: var(--ca-blue); font-size: 1.1rem; }
+    .svc-body h6 { font-size: .9rem; font-weight: 700; margin-bottom: .25rem; }
+    .svc-body p { font-size: .78rem; color: var(--ca-mid); margin: 0; line-height: 1.5; }
+
+    /* ─── WHY US ─── */
+    .why-section { padding: 100px 0; }
+    .pillar-card {
+      padding: 2rem 1.5rem;
+      border-radius: var(--radius);
+      border: 1px solid rgba(28,111,163,.10);
+      text-align: center;
+      transition: box-shadow .2s, transform .2s;
+      height: 100%;
+    }
+    .pillar-card:hover { box-shadow: var(--shadow-md); transform: translateY(-4px); }
+    .pillar-icon {
+      width: 60px; height: 60px;
+      border-radius: 50%;
+      background: var(--ca-blue-lt);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+    }
+    .pillar-icon i { color: var(--ca-blue); font-size: 1.4rem; }
+    .pillar-card h5 { font-weight: 700; font-size: .95rem; margin-bottom: .5rem; }
+    .pillar-card p { font-size: .82rem; color: var(--ca-mid); margin: 0; }
+
+    /* ─── PROCESS ─── */
+    .process-section { background: var(--ca-blue-dk); padding: 100px 0; }
+    .process-step {
+      text-align: center;
+      position: relative;
+    }
+    .process-step::after {
+      content: '';
+      position: absolute;
+      top: 28px; right: -50%;
+      width: 100%; height: 2px;
+      background: rgba(255,255,255,.15);
+    }
+    .process-step:last-child::after { display: none; }
+    .step-circle {
+      width: 56px; height: 56px;
+      border-radius: 50%;
+      background: var(--ca-orange);
+      color: #fff;
+      font-weight: 800;
+      font-size: 1.1rem;
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 1rem;
+      position: relative; z-index: 1;
+    }
+    .process-step h6 { color: #fff; font-weight: 600; font-size: .85rem; }
+    .process-step p { color: rgba(255,255,255,.55); font-size: .75rem; }
+
+    /* ─── TESTIMONIALS ─── */
+    .testimonials-section { padding: 100px 0; background: var(--ca-light); }
+    .testi-card {
+      background: var(--ca-white);
+      border-radius: var(--radius);
+      padding: 2rem;
+      border: 1px solid rgba(28,111,163,.10);
+      height: 100%;
+      position: relative;
+    }
+    .testi-card::before {
+      content: '\201C';
+      font-size: 5rem;
+      color: var(--ca-blue-lt);
+      font-family: 'Playfair Display', serif;
+      position: absolute;
+      top: -10px; left: 20px;
+      line-height: 1;
+    }
+    .testi-card p { font-size: .88rem; color: var(--ca-mid); line-height: 1.75; }
+    .testi-card .avatar {
+      width: 42px; height: 42px;
+      border-radius: 50%;
+      background: var(--ca-blue);
+      color: #fff;
+      display: flex; align-items: center; justify-content: center;
+      font-weight: 700; font-size: .9rem;
+    }
+    .testi-card .name { font-weight: 700; font-size: .88rem; }
+    .testi-card .role { font-size: .75rem; color: var(--ca-mid); }
+    .stars { color: #F59E0B; font-size: .8rem; }
+
+    /* ─── CTA BAND ─── */
+    .cta-band {
+      background: linear-gradient(120deg, var(--ca-blue) 0%, var(--ca-blue-dk) 100%);
+      padding: 80px 0;
+      position: relative;
+      overflow: hidden;
+    }
+    .cta-band::before {
+      content: '';
+      position: absolute;
+      width: 500px; height: 500px;
+      border-radius: 50%;
+      background: rgba(242,101,34,.10);
+      right: -100px; top: -150px;
+    }
+    .cta-band h2 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.8rem, 3vw, 2.6rem);
+      font-weight: 800;
+      color: #fff;
+    }
+    .cta-band p { color: rgba(255,255,255,.72); font-size: 1rem; }
+
+    /* ─── CONTACT ─── */
+    .contact-section { padding: 100px 0; }
+    .contact-info-item {
+      display: flex; gap: 1rem; align-items: flex-start;
+      margin-bottom: 1.8rem;
+    }
+    .cinfo-icon {
+      width: 44px; height: 44px;
+      border-radius: 10px;
+      background: var(--ca-blue-lt);
+      display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0;
+    }
+    .cinfo-icon i { color: var(--ca-blue); font-size: 1rem; }
+    .cinfo-body h6 { font-weight: 700; font-size: .88rem; margin-bottom: .2rem; }
+    .cinfo-body p { font-size: .82rem; color: var(--ca-mid); margin: 0; }
+    .contact-form .form-control, .contact-form .form-select {
+      border-radius: 8px;
+      border: 1.5px solid rgba(28,111,163,.18);
+      font-size: .875rem;
+      padding: .65rem 1rem;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    .contact-form .form-control:focus, .contact-form .form-select:focus {
+      border-color: var(--ca-blue);
+      box-shadow: 0 0 0 3px rgba(28,111,163,.12);
+    }
+    .contact-form label { font-size: .82rem; font-weight: 600; margin-bottom: .4rem; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--ca-dark);
+      padding: 60px 0 0;
+      color: rgba(255,255,255,.65);
+    }
+    footer h6 { color: #fff; font-weight: 700; font-size: .85rem; margin-bottom: 1.2rem; letter-spacing: .05em; text-transform: uppercase; }
+    footer a { color: rgba(255,255,255,.65); text-decoration: none; font-size: .82rem; display: block; margin-bottom: .5rem; transition: color .2s; }
+    footer a:hover { color: var(--ca-orange); }
+    .footer-bottom {
+      border-top: 1px solid rgba(255,255,255,.08);
+      margin-top: 3rem;
+      padding: 1.2rem 0;
+      font-size: .78rem;
+    }
+    .footer-brand img { height: 36px; filter: brightness(0) invert(1); opacity: .85; }
+    .social-links a {
+      display: inline-flex; align-items: center; justify-content: center;
+      width: 34px; height: 34px;
+      border-radius: 8px;
+      background: rgba(255,255,255,.08);
+      color: rgba(255,255,255,.65) !important;
+      font-size: .85rem;
+      margin-right: .4rem;
+      transition: background .2s, color .2s;
+    }
+    .social-links a:hover { background: var(--ca-orange); color: #fff !important; }
+
+    /* ─── BADGES ─── */
+    .badge-blue { background: var(--ca-blue-lt); color: var(--ca-blue); font-weight: 600; font-size: .72rem; padding: .3rem .7rem; border-radius: 20px; }
+    .badge-orange { background: rgba(242,101,34,.12); color: var(--ca-orange); font-weight: 600; font-size: .72rem; padding: .3rem .7rem; border-radius: 20px; }
+
+    /* ─── ANIMATIONS ─── */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .fade-up { animation: fadeUp .6s ease both; }
+    .delay-1 { animation-delay: .1s; }
+    .delay-2 { animation-delay: .22s; }
+    .delay-3 { animation-delay: .34s; }
+
+    /* scrollbar */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-thumb { background: var(--ca-blue); border-radius: 3px; }
+
+    @media (max-width: 768px) {
+      .process-step::after { display: none; }
+      .hero { min-height: auto; padding: 80px 0 60px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══════════════════════════ NAVBAR ═══════════════════════════ -->
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="#">
+      <img src="./ca_logo.jpeg"
+           alt="CA India Logo"
+           onerror="this.style.display='none'; this.nextElementSibling.style.display='block'">
+      <span style="display:none; font-weight:800; font-size:1.3rem; color:var(--ca-blue);">Gupta Saurav and Associates</span>
+    </a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+      <ul class="navbar-nav ms-auto align-items-lg-center gap-1">
+        <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+        <li class="nav-item"><a class="nav-link" href="#why-us">Why Us</a></li>
+        <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+        <li class="nav-item"><a class="nav-link" href="#testimonials">Testimonials</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+        <li class="nav-item ms-2">
+          <a class="nav-link btn-nav-cta" href="#contact">Get Consultation</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+<section class="hero" id="home">
+  <div class="container position-relative">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <div class="fade-up">
+          <span class="hero-eyebrow"><i class="fas fa-shield-halved me-1"></i> Trusted by 500+ Businesses Across India</span>
+        </div>
+        <h1 class="mt-3 mb-4 fade-up delay-1">
+          Financial Clarity.<br>
+          <span>Compliance Confidence.</span><br>
+          Business Growth.
+        </h1>
+        <p class="hero-sub fade-up delay-2">
+          Full-spectrum chartered accountancy services—from statutory audits and GST compliance to company incorporation and strategic tax advisory. We bring enterprise-grade precision to every client.
+        </p>
+        <div class="d-flex flex-wrap gap-4 mt-4 mb-5 fade-up delay-3">
+          <div class="hero-stat">
+            <div class="num">15+</div>
+            <div class="lbl">Years of Practice</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">500+</div>
+            <div class="lbl">Clients Served</div>
+          </div>
+          <div class="hero-stat">
+            <div class="num">100%</div>
+            <div class="lbl">Compliance Rate</div>
+          </div>
+        </div>
+        <div class="d-flex gap-3 flex-wrap fade-up delay-3">
+          <a href="#contact" class="btn-orange px-4 py-2 rounded-3 text-decoration-none">
+            <i class="fas fa-calendar-check me-2"></i>Book Free Consultation
+          </a>
+          <a href="#services" class="btn btn-outline-light rounded-3 px-4 py-2 fw-semibold" style="font-size:.9rem;">
+            Explore Services <i class="fas fa-arrow-right ms-1"></i>
+          </a>
+        </div>
+      </div>
+      <div class="col-lg-5 offset-lg-1">
+        <div class="hero-card fade-up delay-2">
+          <h5><i class="fas fa-paper-plane me-2" style="color:var(--ca-orange)"></i>Quick Enquiry</h5>
+          <div class="mb-3">
+            <input type="text" class="form-control mb-2" placeholder="Your Full Name">
+            <input type="tel" class="form-control mb-2" placeholder="Mobile Number">
+            <input type="email" class="form-control mb-2" placeholder="Email Address">
+            <select class="form-select mb-2">
+              <option value="">Select Service Required</option>
+              <option>Statutory / Tax Audit</option>
+              <option>GST Registration & Returns</option>
+              <option>Income Tax Filing (ITR)</option>
+              <option>Company / LLP Incorporation</option>
+              <option>ROC / MCA Compliance</option>
+              <option>MSME / Udyam Registration</option>
+              <option>Accounting & Book Keeping</option>
+              <option>Other Services</option>
+            </select>
+            <textarea class="form-control" rows="2" placeholder="Brief description of your requirement (optional)"></textarea>
+          </div>
+          <button class="btn-orange w-100 rounded-3" onclick="submitEnquiry()">
+            <i class="fas fa-paper-plane me-2"></i>Send Enquiry
+          </button>
+          <p class="text-center mt-2 mb-0" style="font-size:.72rem; color:rgba(255,255,255,.45);">
+            <i class="fas fa-lock me-1"></i>Your information is secure and confidential.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TRUST BAR ═══════════════════════════ -->
+<div class="trust-bar">
+  <div class="container">
+    <div class="row justify-content-center g-3 text-center">
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="trust-item justify-content-center">
+          <i class="fas fa-user-graduate"></i>
+          <span>ICAI Registered CA</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="trust-item justify-content-center">
+          <i class="fas fa-certificate"></i>
+          <span>ISO 9001 Practices</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="trust-item justify-content-center">
+          <i class="fas fa-shield-check"></i>
+          <span>100% Data Confidential</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="trust-item justify-content-center">
+          <i class="fas fa-headset"></i>
+          <span>Dedicated Support</span>
+        </div>
+      </div>
+      <div class="col-6 col-md-3 col-lg-2">
+        <div class="trust-item justify-content-center">
+          <i class="fas fa-clock"></i>
+          <span>Timely Compliance</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════ SERVICES ═══════════════════════════ -->
+<section class="services-section" id="services">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-7">
+        <span class="section-eyebrow"><i class="fas fa-grid-2 me-1"></i>Our Practice Areas</span>
+        <h2 class="section-title mt-2">Comprehensive Services for <span>Every Financial Need</span></h2>
+        <p class="text-muted mt-3" style="font-size:.9rem; line-height:1.75;">From compliance to consultancy, we offer an integrated suite of chartered accountancy services tailored for businesses, startups, trusts, and individuals.</p>
+      </div>
+    </div>
+    <div class="row g-4">
+      <!-- Tab Buttons -->
+      <div class="col-lg-3">
+        <div class="d-flex flex-column gap-2" id="serviceTabs">
+          <button class="service-tab-btn active" onclick="showPanel('audit')" id="tab-audit">
+            <i class="fas fa-magnifying-glass-chart"></i> Audit & Assurance
+          </button>
+          <button class="service-tab-btn" onclick="showPanel('gst')" id="tab-gst">
+            <i class="fas fa-receipt"></i> GST Services
+          </button>
+          <button class="service-tab-btn" onclick="showPanel('it')" id="tab-it">
+            <i class="fas fa-file-invoice-dollar"></i> Income Tax
+          </button>
+          <button class="service-tab-btn" onclick="showPanel('roc')" id="tab-roc">
+            <i class="fas fa-building-columns"></i> Company Law / ROC
+          </button>
+          <button class="service-tab-btn" onclick="showPanel('reg')" id="tab-reg">
+            <i class="fas fa-stamp"></i> Other Registrations
+          </button>
+          <button class="service-tab-btn" onclick="showPanel('other')" id="tab-other">
+            <i class="fas fa-briefcase"></i> Other Services
+          </button>
+        </div>
+      </div>
+      <!-- Panels -->
+      <div class="col-lg-9">
+
+        <!-- AUDIT -->
+        <div class="service-panel active" id="panel-audit">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="svc-icon"><i class="fas fa-landmark"></i></div>
+                <div class="svc-body"><h6>Statutory Audit</h6><p>Comprehensive audit of financial statements as mandated under the Companies Act, ensuring true and fair reporting.</p></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="svc-icon"><i class="fas fa-file-invoice"></i></div>
+                <div class="svc-body"><h6>Tax Audit</h6><p>Audit under Section 44AB of the Income Tax Act for businesses and professionals exceeding prescribed turnover limits.</p></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="svc-icon"><i class="fas fa-piggy-bank"></i></div>
+                <div class="svc-body"><h6>Bank Concurrent Audit</h6><p>Real-time examination of bank branch transactions to detect irregularities, fraud, and compliance gaps.</p></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="svc-icon"><i class="fas fa-magnifying-glass"></i></div>
+                <div class="svc-body"><h6>Internal Audit</h6><p>Independent evaluation of internal controls, processes, and risk management frameworks for operational excellence.</p></div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card">
+                <div class="svc-icon"><i class="fas fa-handshake"></i></div>
+                <div class="svc-body"><h6>Trust & Co-operative Society Audit</h6><p>Specialized audit services for charitable trusts and co-operative societies per applicable statutes.</p></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- GST -->
+        <div class="service-panel" id="panel-gst">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-address-card"></i></div><div class="svc-body"><h6>GST Registration</h6><p>Smooth and compliant GST registration for businesses, e-commerce operators, and interstate suppliers.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-calendar-days"></i></div><div class="svc-body"><h6>Monthly / Quarterly Returns</h6><p>Accurate and timely filing of GSTR-1, GSTR-3B, and GSTR-7 to ensure zero penalties.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-file-alt"></i></div><div class="svc-body"><h6>GST Annual Return</h6><p>Comprehensive GSTR-9 and GSTR-9C filing with thorough reconciliation and audit trail.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-balance-scale"></i></div><div class="svc-body"><h6>GST Reconciliation</h6><p>Detailed reconciliation of GSTR-2A/2B with books of accounts to maximise ITC claims.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-money-bill-transfer"></i></div><div class="svc-body"><h6>GST Refund Claim</h6><p>Expert handling of GST refund applications for exporters, inverted duty, and excess tax paid.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-gavel"></i></div><div class="svc-body"><h6>GST Litigation Services</h6><p>Representation before GST authorities, appellate tribunals, and High Courts for disputes and notices.</p></div></div>
+            </div>
+            <div class="col-md-6">
+              <div class="service-card"><div class="svc-icon"><i class="fas fa-ban"></i></div><div class="svc-body"><h6>GST Cancellation</h6><p>Streamlined cancellation of GST registration for businesses that have ceased or restructured.</p></div></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- INCOME TAX -->
+        <div class="service-panel" id="panel-it">
+          <div class="row g-3">
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-file-signature"></i></div><div class="svc-body"><h6>ITR Filing</h6><p>Accurate filing of all ITR forms for individuals, HUFs, partnerships, companies, and LLPs.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-percent"></i></div><div class="svc-body"><h6>TDS / TCS Compliance</h6><p>End-to-end TDS return filing, form 16/16A generation, and TCS compliance management.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-calculator"></i></div><div class="svc-body"><h6>Advance Tax Calculation</h6><p>Strategic advance tax planning and computation to avoid interest liability under Sections 234B & 234C.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-lightbulb"></i></div><div class="svc-body"><h6>Tax Planning & Advisory</h6><p>Year-round tax planning strategies to legally minimise tax outgo for individuals and businesses.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-person-chalkboard"></i></div><div class="svc-body"><h6>Representation before IT Authorities</h6><p>Professional representation in scrutiny assessments, appeals, and tax hearings.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-gavel"></i></div><div class="svc-body"><h6>Income Tax Litigation</h6><p>Expert legal support for CIT(A), ITAT proceedings, and High Court appeals in tax disputes.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-id-card"></i></div><div class="svc-body"><h6>TAN & PAN Application</h6><p>Quick and error-free TAN and PAN registration for individuals, businesses, and trusts.</p></div></div></div>
+          </div>
+        </div>
+
+        <!-- ROC -->
+        <div class="service-panel" id="panel-roc">
+          <div class="row g-3">
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-building"></i></div><div class="svc-body"><h6>Company Incorporation</h6><p>Seamless incorporation of Private Limited, Public Limited, and One-Person Companies under MCA.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-people-group"></i></div><div class="svc-body"><h6>LLP Incorporation</h6><p>Fast and compliant registration of Limited Liability Partnerships with complete documentation support.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-calendar-check"></i></div><div class="svc-body"><h6>ROC Annual Filing</h6><p>Timely filing of AOC-4, MGT-7, and other ROC forms to maintain company compliance status.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-link"></i></div><div class="svc-body"><h6>Charge Related Compliance</h6><p>Creation, modification, and satisfaction of charges over company assets as per Companies Act 2013.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-list-check"></i></div><div class="svc-body"><h6>Other MCA Compliances</h6><p>Director KYC, DIN allotment, board resolutions, share transfers, and all other MCA filings.</p></div></div></div>
+          </div>
+        </div>
+
+        <!-- REGISTRATIONS -->
+        <div class="service-panel" id="panel-reg">
+          <div class="row g-3">
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-industry"></i></div><div class="svc-body"><h6>Udyam / MSME Registration</h6><p>Online Udyam registration to unlock government schemes, collateral-free loans, and priority sector benefits.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-utensils"></i></div><div class="svc-body"><h6>Food Licence (FSSAI)</h6><p>FSSAI basic, state, and central licence registration and renewal for food businesses.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-trademark"></i></div><div class="svc-body"><h6>Trademark Registration</h6><p>Protect your brand identity with trademark search, filing, and prosecution services.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-users-gear"></i></div><div class="svc-body"><h6>PF / ESIC Registration</h6><p>Hassle-free PF and ESIC employer registration for compliant workforce management.</p></div></div></div>
+          </div>
+        </div>
+
+        <!-- OTHER -->
+        <div class="service-panel" id="panel-other">
+          <div class="row g-3">
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-chart-line"></i></div><div class="svc-body"><h6>Business Consultancy</h6><p>Strategic financial and operational guidance to scale your business sustainably and profitably.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-book-open"></i></div><div class="svc-body"><h6>Accounting & Book Keeping</h6><p>Accurate, cloud-ready bookkeeping and MIS reporting for well-informed business decisions.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-file-chart-column"></i></div><div class="svc-body"><h6>CMA Data & Loan Project Report</h6><p>Bank-grade CMA data preparation and project reports to support working capital and term loan applications.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-umbrella"></i></div><div class="svc-body"><h6>PF / ESIC Return</h6><p>Monthly EPF and ESIC return filing with challan generation and employee reconciliation.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-rocket"></i></div><div class="svc-body"><h6>Start-up Advisory</h6><p>End-to-end start-up handholding: incorporation, DPIIT recognition, funding advisory, and compliance.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-file-circle-check"></i></div><div class="svc-body"><h6>Certification Services</h6><p>All types of CA certificates including net worth, turnover, export, IT refund, and bank NOC certificates.</p></div></div></div>
+            <div class="col-md-6"><div class="service-card"><div class="svc-icon"><i class="fas fa-fingerprint"></i></div><div class="svc-body"><h6>Digital Signature Certificate</h6><p>Class 2 and Class 3 DSC issuance for individuals and organizations for MCA, GST, and tender filings.</p></div></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ WHY US ═══════════════════════════ -->
+<section class="why-section" id="why-us">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow"><i class="fas fa-star me-1"></i>Why Choose Us</span>
+      <h2 class="section-title mt-2">The CA India <span>Advantage</span></h2>
+      <p class="text-muted mx-auto mt-2" style="max-width:520px; font-size:.9rem;">We combine deep domain expertise with a client-first approach to deliver measurable outcomes every time.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-user-tie"></i></div>
+          <h5>Expert CA Team</h5>
+          <p>ICAI-registered Chartered Accountants with over 15 years of combined practice across diverse industries.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-clock-rotate-left"></i></div>
+          <h5>On-Time Delivery</h5>
+          <p>We track every due date proactively so you never face penalties, interest, or last-minute compliance scrambles.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-lock"></i></div>
+          <h5>Data Confidentiality</h5>
+          <p>All client data is handled with the highest professional secrecy standards as per ICAI Code of Ethics.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-handshake-simple"></i></div>
+          <h5>Personalised Service</h5>
+          <p>Every client gets a dedicated relationship manager—no call centers, no generic advice, just tailored solutions.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-indian-rupee-sign"></i></div>
+          <h5>Transparent Pricing</h5>
+          <p>Clear, upfront fee structures with no hidden costs. We tell you exactly what you're paying for and why.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-scale-balanced"></i></div>
+          <h5>Full Compliance Cover</h5>
+          <p>Income Tax, GST, MCA, PF, ESIC—all under one roof, ensuring no compliance gap goes unnoticed.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-cloud"></i></div>
+          <h5>Tech-Enabled Practice</h5>
+          <p>Cloud accounting, digital document management, and real-time reporting for the modern business environment.</p>
+        </div>
+      </div>
+      <div class="col-sm-6 col-lg-3">
+        <div class="pillar-card">
+          <div class="pillar-icon"><i class="fas fa-headset"></i></div>
+          <h5>Always Available</h5>
+          <p>Critical compliance never sleeps. Our team is reachable on priority channels for time-sensitive matters.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ PROCESS ═══════════════════════════ -->
+<section class="process-section" id="process">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow" style="color:var(--ca-orange)"><i class="fas fa-route me-1"></i>Our Engagement Model</span>
+      <h2 class="section-title mt-2" style="color:#fff;">Simple. Structured. <span style="color:var(--ca-orange)">Seamless.</span></h2>
+      <p style="color:rgba(255,255,255,.6); font-size:.9rem; max-width:500px; margin:auto;">From first contact to final delivery, we follow a disciplined four-step process designed around your convenience.</p>
+    </div>
+    <div class="row g-4 position-relative">
+      <div class="col-6 col-md-3">
+        <div class="process-step">
+          <div class="step-circle">1</div>
+          <h6>Initial Consultation</h6>
+          <p>Free 30-minute call to understand your needs, pain points, and compliance gaps.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="process-step">
+          <div class="step-circle">2</div>
+          <h6>Document Collection</h6>
+          <p>Secure digital submission of required documents through our encrypted portal.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="process-step">
+          <div class="step-circle">3</div>
+          <h6>Expert Processing</h6>
+          <p>Our CA team reviews, prepares, and cross-checks all work for accuracy and compliance.</p>
+        </div>
+      </div>
+      <div class="col-6 col-md-3">
+        <div class="process-step">
+          <div class="step-circle">4</div>
+          <h6>Delivery & Handoff</h6>
+          <p>Timely filing confirmation, reports, and a compliance calendar delivered to your inbox.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ TESTIMONIALS ═══════════════════════════ -->
+<section class="testimonials-section" id="testimonials">
+  <div class="container">
+    <div class="text-center mb-5">
+      <span class="section-eyebrow"><i class="fas fa-comment-dots me-1"></i>Client Stories</span>
+      <h2 class="section-title mt-2">Trusted by Businesses <span>Across India</span></h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="testi-card">
+          <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>We've been filing our GST returns and statutory audit with this firm for over three years. Zero errors, zero delays. Their proactive reminders and clear communication make compliance completely stress-free for our finance team.</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">RK</div>
+            <div><div class="name">Rajesh Kumar</div><div class="role">MD, RK Exports Pvt. Ltd.</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card">
+          <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+          <p>As a startup founder, I had no idea about compliances when I started out. The team guided me through company incorporation, DPIIT recognition, and GST setup. Now I can focus on my business knowing everything is in safe hands.</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">PS</div>
+            <div><div class="name">Priya Sharma</div><div class="role">Founder, TechNova Solutions</div></div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testi-card">
+          <div class="stars mb-2"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star-half-stroke"></i></div>
+          <p>The CMA data and project report prepared by their team helped us secure a term loan of ₹2 crore from our bank with minimal back-and-forth. The report quality was exceptional—our bank manager specifically complimented it.</p>
+          <div class="d-flex align-items-center gap-3 mt-3">
+            <div class="avatar">AM</div>
+            <div><div class="name">Anil Mehta</div><div class="role">Proprietor, Mehta Agro Industries</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CTA BAND ═══════════════════════════ -->
+<section class="cta-band">
+  <div class="container position-relative">
+    <div class="row align-items-center">
+      <div class="col-lg-7">
+        <h2>Ready to make compliance<br>your competitive edge?</h2>
+        <p class="mt-2">Book a no-obligation 30-minute consultation with our CA. We'll review your current compliance status and identify opportunities to save time, money, and risk.</p>
+      </div>
+      <div class="col-lg-5 text-lg-end mt-4 mt-lg-0">
+        <a href="#contact" class="btn-orange px-5 py-3 rounded-3 text-decoration-none me-3" style="font-size:1rem; font-weight:700;">
+          <i class="fas fa-phone-volume me-2"></i>Talk to a CA Now
+        </a>
+        <a href="tel:+919031192426" class="btn btn-outline-light rounded-3 px-4 py-3 fw-semibold" style="font-size:.9rem;">
+          <i class="fas fa-phone me-1"></i> Call Directly
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ CONTACT ═══════════════════════════ -->
+<section class="contact-section" id="contact">
+  <div class="container">
+    <div class="row mb-5">
+      <div class="col-lg-6">
+        <span class="section-eyebrow"><i class="fas fa-envelope-open-text me-1"></i>Get In Touch</span>
+        <h2 class="section-title mt-2">Let's Start a <span>Conversation</span></h2>
+        <p class="text-muted mt-2" style="font-size:.9rem;">Fill in the form and one of our Chartered Accountants will reach out to you within one business day.</p>
+      </div>
+    </div>
+    <div class="row g-5">
+      <div class="col-lg-5">
+        <div class="contact-info-item">
+          <div class="cinfo-icon"><i class="fas fa-location-dot"></i></div>
+          <div class="cinfo-body">
+            <h6>Office Address</h6>
+            <p>Meena Bhawan,<br>Beside GS Mother International School Raghopur ,Ahiyapur Muz.– 842001<br>India</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon"><i class="fas fa-phone"></i></div>
+          <div class="cinfo-body">
+            <h6>Phone / WhatsApp</h6>
+            <p>+91 9031192426<br>Mon–Sat, 9 AM to 7 PM IST</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon"><i class="fas fa-envelope"></i></div>
+          <div class="cinfo-body">
+            <h6>Email</h6>
+            <p>casauravkumar0607@gmail.com<br>We respond within 4 business hours.</p>
+          </div>
+        </div>
+        <div class="contact-info-item">
+          <div class="cinfo-icon"><i class="fas fa-clock"></i></div>
+          <div class="cinfo-body">
+            <h6>Working Hours</h6>
+            <p>Monday – Saturday: 9:00 AM – 7:00 PM<br>Sunday: By appointment only</p>
+          </div>
+        </div>
+        <div class="mt-2">
+          <p class="fw-semibold" style="font-size:.82rem; margin-bottom:.6rem;">Connect with us</p>
+          <div class="social-links">
+            <a href="#" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+            <a href="#" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+            <a href="#" title="Instagram"><i class="fab fa-instagram"></i></a>
+            <a href="#" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+            <a href="#" title="Twitter/X"><i class="fab fa-x-twitter"></i></a>
+          </div>
+        </div>
+      </div>
+      <div class="col-lg-7">
+        <div class="contact-form p-4 p-md-5 rounded-4 border" style="border-color:rgba(28,111,163,.12)!important; background:var(--ca-light);">
+          <div class="row g-3">
+            <div class="col-md-6">
+              <label>First Name *</label>
+              <input type="text" class="form-control" placeholder="e.g. Rajesh">
+            </div>
+            <div class="col-md-6">
+              <label>Last Name *</label>
+              <input type="text" class="form-control" placeholder="e.g. Kumar">
+            </div>
+            <div class="col-md-6">
+              <label>Email Address *</label>
+              <input type="email" class="form-control" placeholder="you@company.com">
+            </div>
+            <div class="col-md-6">
+              <label>Mobile Number *</label>
+              <input type="tel" class="form-control" placeholder="+91 98765 43210">
+            </div>
+            <div class="col-md-6">
+              <label>Business Type</label>
+              <select class="form-select">
+                <option value="">Select type</option>
+                <option>Individual / Freelancer</option>
+                <option>Sole Proprietorship</option>
+                <option>Partnership / LLP</option>
+                <option>Private Limited Company</option>
+                <option>Public Limited Company</option>
+                <option>Trust / NGO</option>
+                <option>Start-up</option>
+              </select>
+            </div>
+            <div class="col-md-6">
+              <label>Service Required *</label>
+              <select class="form-select">
+                <option value="">Select service</option>
+                <option>Statutory / Tax Audit</option>
+                <option>GST Registration & Returns</option>
+                <option>Income Tax (ITR / TDS)</option>
+                <option>Company / LLP Incorporation</option>
+                <option>ROC / MCA Annual Filing</option>
+                <option>MSME / Udyam Registration</option>
+                <option>Accounting & Book Keeping</option>
+                <option>CMA Data / Loan Report</option>
+                <option>Trademark / FSSAI</option>
+                <option>Digital Signature (DSC)</option>
+                <option>Other</option>
+              </select>
+            </div>
+            <div class="col-12">
+              <label>Your Message</label>
+              <textarea class="form-control" rows="4" placeholder="Describe your requirement or ask any specific question..."></textarea>
+            </div>
+            <div class="col-12">
+              <button class="btn-orange w-100 py-3 rounded-3" style="font-size:1rem;" onclick="submitContact()">
+                <i class="fas fa-paper-plane me-2"></i>Send Message — We'll Respond Within 24 Hours
+              </button>
+              <p class="text-center mt-2 mb-0" style="font-size:.75rem; color:var(--ca-mid);">
+                <i class="fas fa-shield-halved me-1" style="color:var(--ca-blue)"></i>
+                All information is treated with strict professional confidentiality as per ICAI norms.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════════ FOOTER ═══════════════════════════ -->
+<footer>
+  <div class="container">
+    <div class="row g-5">
+      <div class="col-lg-4">
+        <div class="footer-brand mb-3">
+          <span style="font-family:'Playfair Display',serif; font-size:1.6rem; font-weight:800; color:#fff;">Gupta Saurav and Associates</span>
+        </div>
+        <p style="font-size:.84rem; line-height:1.75; max-width:300px;">
+          Chartered Accountants providing enterprise-grade financial, taxation, and compliance services to businesses and individuals across India.
+        </p>
+        <div class="d-flex gap-2 flex-wrap mt-3">
+          <span class="badge-blue">ICAI Registered</span>
+          <span class="badge-orange">GST Practitioner</span>
+          <span class="badge-blue">Income Tax Authorised</span>
+        </div>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Services</h6>
+        <a href="#services">Audit & Assurance</a>
+        <a href="#services">GST Services</a>
+        <a href="#services">Income Tax</a>
+        <a href="#services">Company Law</a>
+        <a href="#services">Registrations</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Quick Links</h6>
+        <a href="#why-us">Why Choose Us</a>
+        <a href="#process">Our Process</a>
+        <a href="#testimonials">Testimonials</a>
+        <a href="#contact">Contact Us</a>
+        <a href="#">Privacy Policy</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Useful Portals</h6>
+        <a href="https://www.incometax.gov.in" target="_blank">Income Tax Portal</a>
+        <a href="https://www.gst.gov.in" target="_blank">GST Portal</a>
+        <a href="https://www.mca.gov.in" target="_blank">MCA / ROC</a>
+        <a href="https://www.epfindia.gov.in" target="_blank">EPFO Portal</a>
+        <a href="https://www.icai.org" target="_blank">ICAI Website</a>
+      </div>
+      <div class="col-6 col-lg-2">
+        <h6>Contact</h6>
+        <a href="tel:+91XXXXXXXXXX"><i class="fas fa-phone fa-xs me-1"></i>+91 9031192426</a>
+        <a href="mailto:info@caindia.in"><i class="fas fa-envelope fa-xs me-1"></i>casauravkumar0607@gmail.com</a>
+        <a href="#"><i class="fab fa-whatsapp fa-xs me-1"></i>WhatsApp Us</a>
+        <p style="font-size:.78rem; margin-top:.8rem; color:rgba(255,255,255,.4);">Mon–Sat: 9 AM – 7 PM</p>
+      </div>
+    </div>
+    <div class="footer-bottom d-flex flex-column flex-md-row justify-content-between align-items-center gap-2">
+      <span>© 2024 Gupta Saurav and Associates India. All rights reserved. | For professional use only.</span>
+      <span>Designed with <i class="fas fa-heart" style="color:var(--ca-orange)"></i> for Indian CAs</span>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.3/js/bootstrap.bundle.min.js"></script>
+<script>
+  function showPanel(id) {
+    document.querySelectorAll('.service-panel').forEach(p => p.classList.remove('active'));
+    document.querySelectorAll('.service-tab-btn').forEach(b => b.classList.remove('active'));
+    document.getElementById('panel-' + id).classList.add('active');
+    document.getElementById('tab-' + id).classList.add('active');
+  }
+
+  function submitEnquiry() {
+    const btn = event.target;
+    btn.innerHTML = '<i class="fas fa-check me-2"></i>Enquiry Sent! We\'ll call you shortly.';
+    btn.style.background = 'var(--ca-green)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Enquiry';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  function submitContact() {
+    const btn = event.target;
+    btn.innerHTML = '<i class="fas fa-circle-check me-2"></i>Message Sent Successfully!';
+    btn.style.background = 'var(--ca-green)';
+    btn.disabled = true;
+    setTimeout(() => {
+      btn.innerHTML = '<i class="fas fa-paper-plane me-2"></i>Send Message — We\'ll Respond Within 24 Hours';
+      btn.style.background = '';
+      btn.disabled = false;
+    }, 4000);
+  }
+
+  // Navbar active link on scroll
+  const sections = document.querySelectorAll('section[id]');
+  window.addEventListener('scroll', () => {
+    const y = window.scrollY + 80;
+    sections.forEach(s => {
+      const top = s.offsetTop, h = s.offsetHeight;
+      const link = document.querySelector(`.nav-link[href="#${s.id}"]`);
+      if (link) link.classList.toggle('active', y >= top && y < top + h);
+    });
+  });
+</script>
+</body>
+</html>
